@@ -1,6 +1,7 @@
-﻿// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
-// Напишите программу, которая покажет количество чётных чисел в массиве.
-// [345, 897, 568, 234]-> 2
+﻿// // Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
+// // Напишите программу, которая покажет количество чётных чисел в массиве.
+// // [345, 897, 568, 234]-> 2
+
 
 int[] CreateArrayRndInt(int size, int min, int max)
 {
@@ -26,17 +27,20 @@ void PrintArray(int[] arr)
     Console.Write("]");
 }
 
-int[] array = CreateArrayRndInt(12, 100, 1000);
+int[] array = CreateArrayRndInt(10, 0, 99);
 PrintArray(array);
-
-
-int result=0;
-for (int i = 0; i < arr.Length; i++)
+Console.WriteLine();
+FindEven(array);
+void FindEven(int[] MyArray)
 {
-    if (arr[i]%2 == 0)
+    int even = 0;
+    for (int i = 0; i < MyArray.Length; i++)
     {
-        result++;
+        if (MyArray[i] % 2 == 0)
+        {
+            even = even + 1;
+        }
     }
-    return result;
+    Console.WriteLine($"Чётных чисел {even}");
 }
- Console.WriteLine ($"Количество четных числе в массиве -> {result}");
+
